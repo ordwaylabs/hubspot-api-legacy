@@ -12,7 +12,7 @@ end
 
 require 'rspec'
 require 'webmock/rspec'
-require 'hubspot-ruby'
+require 'hubspot-api-legacy'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -22,7 +22,7 @@ RSpec.configure do |config|
   config.mock_with :rr
 
   config.after(:each) do
-    Hubspot::Config.reset!
+    HubspotLegacy::Config.reset!
   end
 
   config.extend CassetteHelper
